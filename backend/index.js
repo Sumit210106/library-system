@@ -1,5 +1,6 @@
 const express = require('express');
 const bookRouter = require('./routes/book.routes')
+const genreRouter = require('./routes/genre.routes')
 require('dotenv').config();
 
 const app = express() ;
@@ -12,7 +13,7 @@ const PORT = 5454 ;
 // })
 
 app.use('/api/v1' , bookRouter)
-
+app.use('/api/v1' , genreRouter)
 
 app.listen(PORT , () => {
     console.log(`server is running in port ${PORT}`)
